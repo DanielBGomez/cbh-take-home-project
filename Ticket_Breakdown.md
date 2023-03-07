@@ -16,3 +16,52 @@ Based on the information given, break this ticket down into 2-5 individual ticke
 You will be graded on the level of detail in each ticket, the clarity of the execution plan within and between tickets, and the intelligibility of your language. You don't need to be a native English speaker, but please proof-read your work.
 
 ## Your Breakdown Here
+
+# Spike: Custom IDs for each Agent.
+
+**Context:** Currently, the id of each Agent on the reports we generate is their internal database id. We'd like to add the ability for Facilities to save their own custom ids for each Agent they work with and use that id when generating reports for them.
+
+**Timebox:** 1-2 days.
+
+**To do:**
+- Create a field in the Facilities collection to store a collection of custom IDs for their Agents.
+- Update the 
+
+Currently, the id of each Agent on the reports we generate is their internal database id. We'd like to add the ability for Facilities to save their own custom ids for each Agent they work with and use that id when generating reports for them.
+
+---
+
+# Create Agents' custom ID field in the Facilities collection 
+In order to allow each Facility to have a custom ID for each Agent assigned to it, we need to add a collection of aliases/custom IDs into the Facilities model.
+
+**Requirements:**
+- Have the right reference for an Agent ID <--> Custom ID.
+
+**Story points:** 1
+
+---
+
+# Add the Agent's custom ID into the getShifsByFacility method
+
+**Requirements:**
+- Add the `customId` field in every Agent's object from the `getShiftsByFacility` if the Agent has a custom ID.
+
+**Acceptance Criteria:**
+- If the Agent has a custom ID in the Facility, every instance of that Agent's object should have the `customId` field.
+- If the Agent has not a custom ID, the field `customId` should not exists.
+- The `customId` field is defined by Facility, so if the same Agent exists in differents Facilities, the field may be different.
+
+**Story points:** 1
+
+---
+
+# Use the Agent's custom ID when generating reports
+
+**Requirements:**
+- Usage of the `customId` field if exists in the `generateReport` method.
+
+**Acceptance Criteria:**
+- If the Agent has a `customId` field, that value should be used instead of the database ID.
+- If the Agent does not have a `customId`, the database ID should be used.
+
+**Story points:** 1

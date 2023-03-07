@@ -9,3 +9,8 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+For the refactor of this module I made the following changes:
+- Move all the 'static' values on top as configuration constants in orderto being able to modify those values easily if the module grows in size.This will also help to prevent changing it multiple times if any of thosevalues is being used in multiple places (currently now happening but as aprecaution).
+- The 'static' configuration constants have a clear name of what they are(kind of the no-magic-numbers rule on eslint).
+- The logic is split in 3 functions that has specific functionalitysummarized in the name so it's more readable and clear and easier tomodify in the future.
+- All methods has their JSDOC with params and returns definitions (wouldbe better with typescript) and no internal comments as any function shouldbe readable by the code or more refactoring is needed.
