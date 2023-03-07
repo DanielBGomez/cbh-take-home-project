@@ -17,20 +17,6 @@ You will be graded on the level of detail in each ticket, the clarity of the exe
 
 ## Your Breakdown Here
 
-# Spike: Custom IDs for each Agent.
-
-**Context:** Currently, the id of each Agent on the reports we generate is their internal database id. We'd like to add the ability for Facilities to save their own custom ids for each Agent they work with and use that id when generating reports for them.
-
-**Timebox:** 1-2 days.
-
-**To do:**
-- Create a field in the Facilities collection to store a collection of custom IDs for their Agents.
-- Update the 
-
-Currently, the id of each Agent on the reports we generate is their internal database id. We'd like to add the ability for Facilities to save their own custom ids for each Agent they work with and use that id when generating reports for them.
-
----
-
 # Create Agents' custom ID field in the Facilities collection 
 In order to allow each Facility to have a custom ID for each Agent assigned to it, we need to add a collection of aliases/custom IDs into the Facilities model.
 
